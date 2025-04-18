@@ -2,7 +2,7 @@
 
 @theme inline {
 
-    --fonts-sans: 'averta', sans-serif;
+    --font-sans: 'averta', sans-serif;
 
     --color-background: var(--background);
     --color-foreground: var(--foreground);

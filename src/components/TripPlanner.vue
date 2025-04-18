@@ -1,27 +1,35 @@
 <template>
-    <div class="trip-planner">
-    <h2>Your Trip Plan</h2>
-    <div v-if="selectedPlanets.length === 0" class="empty-message">
-      No planets selected. Start planning your trip!
-    </div>
-    <ul class="selected-planets">
-      <li v-for="planet in selectedPlanets" :key="planet.uid" class="selected-planet">
-        <img :src="planet.image" :alt="planet.name" class="planet-image" />
-        <div class="planet-details">
-          <h3>{{ planet.name }}</h3>
-          <p><strong>Climate:</strong> {{ planet.climate }}</p>
-          <p><strong>Terrain:</strong> {{ planet.terrain }}</p>
+    <div class="bg-primary/20 py-3 space-y-2 lg:sticky lg:top-[84px] xl:top-[100px]">
+
+        <h2 class="text-base xl:text-xl font-semibold text-center">
+            Your planetary route
+        </h2>
+
+        <div v-if="selectedPlanets.length === 0" class="text-center text-sm xl:text-base text-muted-foreground">
+            You have not selected any planets
         </div>
-      </li>
-    </ul>
-    <button v-if="selectedPlanets.length > 0" @click="clearPlanets" class="clear-button">
-      Clear Planets
-    </button>
-  </div>
+
+        <ul v-else class="space-y-1">
+            <li v-for="planet in selectedPlanets" :key="planet.uid" class="lg:px-8">
+                <div class="bg-white max-w-1/2 lg:max-w-1/1 mx-auto px-3 py-1">
+                    <h3>{{ planet.name }}</h3>
+                </div>
+            </li>
+        </ul>
+
+        <div v-if="selectedPlanets.length > 0" class="text-center">
+            <button @click="clearPlanets" class="hover:bg-destructive/10 text-destructive font-semibold rounded-full px-4 py-2 transition-all cursor-pointer inline-flex items-center gap-2">
+                <X :size="20" class="relative top-[1px]" />
+                Clear list
+            </button>
+        </div>
+
+    </div>
 </template>
 
 <script setup lang="ts">
 import { usePLanetsStore } from '@/stores/planets';
+import { X } from 'lucide-vue-next';
 
 const planetsStore = usePLanetsStore();
 const selectedPlanets = planetsStore.selectedPlanets;
