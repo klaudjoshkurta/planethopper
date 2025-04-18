@@ -25,12 +25,12 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { usePLanetsStore } from '@/stores/planets';
+import { usePlanetsStore } from '@/stores/planets';
 import type { Planet } from '@/types/planet';
 import PlanetItem from './PlanetItem.vue';
 import { LoaderCircle } from 'lucide-vue-next';
 
-const planetsStore = usePLanetsStore();
+const planetsStore = usePlanetsStore();
 
 onMounted(async () => {
     await loadMorePlanets();

@@ -9,7 +9,7 @@ const planetImages = [
     'https://images.ferryhopper.com/locations/Ios.JPG',
 ];
 
-export const usePLanetsStore = defineStore('planets', {
+export const usePlanetsStore = defineStore('planets', {
     state: () => ({
         planets: [] as Planet[],
         currentPage: 1,

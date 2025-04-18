@@ -6,7 +6,7 @@
         </header>
 
         <!-- Main Content -->
-        <main class="xl:container xl:mx-auto lg:grid lg:grid-cols-12 lg:gap-x-12 lg:px-4">
+        <main class="xl:container xl:mx-auto lg:grid lg:grid-cols-12 lg:gap-x-12 lg:px-4 py-[1px]">
 
             <!-- Trip Planer -->
             <div class="bg-white sticky lg:static top-12 lg:col-span-4 lg:order-2">

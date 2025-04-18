@@ -28,11 +28,12 @@
 </template>
 
 <script setup lang="ts">
-import { usePLanetsStore } from '@/stores/planets';
+import { computed } from 'vue';
+import { usePlanetsStore } from '@/stores/planets';
 import { X } from 'lucide-vue-next';
 
-const planetsStore = usePLanetsStore();
-const selectedPlanets = planetsStore.selectedPlanets;
+const planetsStore = usePlanetsStore();
+const selectedPlanets = computed(() => planetsStore.selectedPlanets);
 
 const clearPlanets = () => {
     planetsStore.clearPlanets();
