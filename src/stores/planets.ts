@@ -15,9 +15,11 @@ export const usePLanetsStore = defineStore('planets', {
         currentPage: 1,
         hasMore: true,
         selectedPlanets: [] as Planet[],
+        loading: false,
     }),
     actions: {
         async loadPlanets() {
+            this.loading = true;
             try {
                 const data = await fetchPlanets(this.currentPage);
 
@@ -41,6 +43,8 @@ export const usePLanetsStore = defineStore('planets', {
                 this.hasMore = !!data.next;
             } catch (error) {
                 console.error("Error loading planets:", error);
+            } finally {
+                this.loading = false;
             }
         },
         selectPlanet(planet: Planet) {

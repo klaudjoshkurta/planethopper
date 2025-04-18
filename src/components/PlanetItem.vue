@@ -1,6 +1,6 @@
 <template>
     <div class="border flex items-center gap-4 p-2 hover:border-primary hover:ring-1 ring-primary cursor-pointer transition-all">
-        <img :src="planet.image" :alt="planet.name" class="max-w-[100px] aspect-square object-cover" />
+        <img v-if="planet.image" :src="planet.image" :alt="planet.name" class="size-[100px] aspect-square object-cover" />
         <div class="space-y-1">
             <h3 class="text-lg font-semibold">{{ planet.name }}</h3>
             <p class="text-muted-foreground text-sm">Climate: {{ planet.climate }}</p>

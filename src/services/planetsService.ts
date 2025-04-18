@@ -4,7 +4,7 @@ import axios from 'axios';
 const BASE_URL = 'https://swapi.tech/api/';
 
 export const fetchPlanets = async (page: number): Promise<{ results: { uid: string; name: string; url: string }[]; next: string | null }> => {
-    const response = await axios.get(`${BASE_URL}planets/?page=${page}`);
+    const response = await axios.get(`${BASE_URL}planets?page=${page}&limit=10`);
     return response.data;
 }
 
