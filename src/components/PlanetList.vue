@@ -5,6 +5,8 @@
         v-for="planet in planetsStore.planets"
         :key="planet.uid"
         :planet="planet"
+        :class="['planet-item', { selected: isSelected(planet) }]"
+        @click="selectPlanet(planet)"
       />
     </div>
     <button v-if="planetsStore.hasMore" @click="loadMorePlanets">Load More</button>
@@ -28,5 +30,13 @@ const loadMorePlanets = async () => {
     } catch (error) {
         console.error('Error loading more planets:', error);
     }
+};
+
+const selectPlanet = (planet: Planet) => {
+  planetsStore.selectPlanet(planet);
+};
+
+const isSelected = (planet: Planet) => {
+  return planetsStore.selectedPlanets.includes(planet);
 };
 </script>

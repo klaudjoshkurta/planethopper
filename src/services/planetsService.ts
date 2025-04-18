@@ -10,5 +10,5 @@ export const fetchPlanets = async (page: number): Promise<{ results: { uid: stri
 
 export const fetchPlanetDetails = async (planetID: string): Promise<Planet> => {
     const response = await axios.get(`${BASE_URL}planets/${planetID}`);
-    return response.data;
+    return response.data.result.properties;
 }

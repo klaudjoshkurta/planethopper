@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img :src="planet.image" :alt="planet.name" />
+        <img :src="planet.image" :alt="planet.name" style="width: 100px;" />
         <h3>{{ planet.name }}</h3>
         <p>Climate: {{ planet.climate }}</p>
         <p>Terrain: {{ planet.terrain }}</p>

@@ -23,17 +23,18 @@ export const usePLanetsStore = defineStore('planets', {
 
                 for (const planet of data.results) {
 
+                    const planetItem = {} as Planet;
                     const details = await fetchPlanetDetails(planet.uid);
                     const randomImage = planetImages[Math.floor(Math.random() * planetImages.length)];
 
-                    this.planets.push({
-                        uid: planet.uid,
-                        name: planet.name,
-                        climate: details.climate,
-                        terrain: details.terrain,
-                        population: details.population,
-                        image: randomImage,
-                    })
+                    planetItem.uid = planet.uid;
+                    planetItem.name = planet.name;
+                    planetItem.climate = details.climate;
+                    planetItem.terrain = details.terrain;
+                    planetItem.population = details.population;
+                    planetItem.image = randomImage;
+
+                    this.planets.push(planetItem)
                 }
 
                 this.currentPage++;
