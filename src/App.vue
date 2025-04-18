@@ -1,6 +1,8 @@
-<script setup lang="ts">
-</script>
-
 <template>
-    <div></div>
+    <PlanetList />
 </template>
+
+<script setup lang="ts">
+import PlanetList from './components/PlanetList.vue';
+
+</script>
