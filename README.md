@@ -1,39 +1,27 @@
-# planethopper
 
-This template should help get you started developing with Vue 3 in Vite.
+# Planet Hopper
 
-## Recommended IDE Setup
+### Installation and Running the Project
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+#### Prerequisites
+- Ensure you have [Git](https://git-scm.com/) installed.
+- Install [Node.js](https://nodejs.org/) (LTS version recommended).
 
-## Type Support for `.vue` Imports in TS
+#### Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/planethopper.git
+    cd planethopper
+    ```
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Running the Project
+1. Start the development server:
+    ```bash
+    npm start
+    ```
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+2. Open your browser and navigate to `http://localhost:5173`.
