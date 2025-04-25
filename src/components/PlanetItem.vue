@@ -18,5 +18,5 @@ import type { Planet } from '@/types/planet';
 
 const props = defineProps<{ planet: Planet, isSelected: boolean }>();
 
-const formattedPopulation = props.planet.population ? Number(props.planet.population).toLocaleString('en-US') : 'unknown';
+const formattedPopulation = props.planet.population !== "unknown" ? Number(props.planet.population).toLocaleString('en-US') : 'unknown';
 </script>

@@ -1,6 +1,7 @@
-import { fetchPlanetDetails, fetchPlanets } from "@/services/planetsService";
-import type { Planet } from "@/types/planet";
 import { defineStore } from "pinia";
+import { fetchPlanets } from "@/services/planetsService";
+
+import type { Planet } from "@/types/planet";
 
 const planetImages = [
     'https://images.ferryhopper.com/locations/Skiathos.jpg',
@@ -26,15 +27,23 @@ export const usePlanetsStore = defineStore('planets', {
                 for (const planet of data.results) {
 
                     const planetItem = {} as Planet;
-                    const details = await fetchPlanetDetails(planet.uid);
                     const randomImage = planetImages[Math.floor(Math.random() * planetImages.length)];
 
-                    planetItem.uid = planet.uid;
-                    planetItem.name = planet.name;
-                    planetItem.climate = details.climate;
-                    planetItem.terrain = details.terrain;
-                    planetItem.population = details.population;
                     planetItem.image = randomImage;
+                    planetItem.name = planet.name;
+                    planetItem.rotation_period = planet.rotation_period;
+                    planetItem.orbital_period = planet.orbital_period
+                    planetItem.diameter = planet.diameter
+                    planetItem.climate = planet.climate
+                    planetItem.gravity = planet.gravity
+                    planetItem.terrain = planet.terrain
+                    planetItem.surface_water = planet.surface_water
+                    planetItem.population = planet.population
+                    planetItem.residents = planet.residents
+                    planetItem.films = planet.films
+                    planetItem.created = planet.created
+                    planetItem.edited = planet.edited
+                    planetItem.url = planet.url
 
                     this.planets.push(planetItem)
                 }
