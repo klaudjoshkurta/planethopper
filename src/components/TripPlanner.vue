@@ -9,7 +9,7 @@
         </div>
 
         <ul v-else class="space-y-1">
-            <li v-for="planet in selectedPlanets" :key="planet.uid" class="lg:px-8">
+            <li v-for="(planet, planetIndex) in selectedPlanets" :key="planetIndex" class="lg:px-8">
                 <div class="bg-white max-w-1/2 lg:max-w-1/1 mx-auto px-3 py-1">
                     <h3>{{ planet.name }}</h3>
                 </div>

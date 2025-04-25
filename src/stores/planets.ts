@@ -1,3 +1,36 @@
+/**
+ * A Pinia store for managing planet-related data and actions.
+ *
+ * This store provides state management for a list of planets,
+ * pagination, loading state, and selected planets. It also
+ * includes actions for loading planets from an API, selecting
+ * planets, and clearing the selected planets.
+ *
+ * @store usePlanetsStore
+ *
+ * @state
+ * @property {Planet[]} planets - The list of planets currently loaded.
+ * @property {number} currentPage - The current page of planets being fetched.
+ * @property {boolean} hasMore - Indicates if there are more planets to load.
+ * @property {Planet[]} selectedPlanets - The list of planets selected by the user (up to 5).
+ * @property {boolean} loading - Indicates if the planets are currently being loaded.
+ *
+ * @actions
+ * @method loadPlanets - Fetches a list of planets from the API and updates the store state.
+ * @method selectPlanet - Adds a planet to the selected planets list if it is not already selected and the limit is not exceeded.
+ * @method clearPlanets - Clears the list of selected planets.
+ *
+ * @example
+ * // Load planets
+ * await usePlanetsStore.loadPlanets();
+ *
+ * // Select a planet
+ * usePlanetsStore.selectPlanet(planet);
+ *
+ * // Clear selected planets
+ * usePlanetsStore.clearPlanets();
+ */
+
 import { defineStore } from "pinia";
 import { fetchPlanets } from "@/services/planetsService";
 

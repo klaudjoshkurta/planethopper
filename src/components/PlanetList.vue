@@ -2,8 +2,8 @@
     <div class="space-y-4 pb-4">
         <!-- Planet Item -->
         <PlanetItem
-            v-for="planet in planetsStore.planets"
-            v-bind:key="planet.uid"
+            v-for="(planet, planetIndex) in planetsStore.planets"
+            v-bind:key="planetIndex"
             v-bind:planet="planet"
             v-bind:is-selected="isSelected(planet)"
             @click="selectPlanet(planet)">
