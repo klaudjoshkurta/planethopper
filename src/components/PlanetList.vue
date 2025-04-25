@@ -1,5 +1,5 @@
 <template>
-    <div class="py-4 lg:py-0 lg:pb-4 px-4 lg:px-0 space-y-4">
+    <div class="space-y-4 pb-4">
         <!-- Planet Item -->
         <PlanetItem
             v-for="planet in planetsStore.planets"

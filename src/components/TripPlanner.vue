@@ -1,11 +1,10 @@
 <template>
-    <div class="bg-primary/20 py-3 space-y-2 lg:sticky lg:top-[84px] xl:top-[100px]">
-
-        <h2 class="text-base xl:text-xl font-semibold text-center">
+    <div class="bg-primary/20 py-3 space-y-2 h-full">
+        <h2 class="text-lg xl:text-xl font-semibold text-center">
             Your planetary route
         </h2>
 
-        <div v-if="selectedPlanets.length === 0" class="text-center text-sm xl:text-base text-muted-foreground">
+        <div v-if="selectedPlanets.length === 0" class="text-center text-base text-muted-foreground">
             You have not selected any planets
         </div>
 
@@ -18,12 +17,12 @@
         </ul>
 
         <div v-if="selectedPlanets.length > 0" class="text-center">
-            <button @click="clearPlanets" class="hover:bg-destructive/10 text-destructive font-semibold rounded-full px-4 py-2 transition-all cursor-pointer inline-flex items-center gap-2">
+            <button @click="clearPlanets"
+                class="hover:bg-destructive/10 text-destructive font-semibold rounded-full px-4 py-2 transition-all cursor-pointer inline-flex items-center gap-2">
                 <X :size="20" class="relative top-[1px]" />
                 Clear list
             </button>
         </div>
-
     </div>
 </template>
 
