@@ -5,7 +5,7 @@
             v-for="planet in planetsStore.planets"
             v-bind:key="planet.uid"
             v-bind:planet="planet"
-            v-bind:class="['planet-item', { selected: isSelected(planet) }]"
+            v-bind:is-selected="isSelected(planet)"
             @click="selectPlanet(planet)">
         </PlanetItem>
 
